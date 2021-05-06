@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = Algorithymsolver::VERSION
   spec.authors       = ["paulo-felipe"]
   spec.email         = ["alparakleto@gmail.com"]
+  spec.add_development_dependency "rspec", "~> 3.2"
 
   spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
   spec.description   = "TODO: Write a longer description or delete this line."
