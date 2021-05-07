@@ -5,6 +5,26 @@ require_relative "algorithymsolver/version"
 module Algorithymsolver
   class Error < StandardError; end
 
+  class LinearSearch
+    def initialize(array, number)
+      @array = array
+      @number = number
+    end
+
+    def search
+      index = -1
+
+
+      @array.length.times do
+        index += 1
+        if @array[index] == @number
+          return index
+        end
+      end
+      -1
+    end
+  end
+
   class MaximizeArray
     def initialize(array, k)
       @array = array
