@@ -14,7 +14,6 @@ module Algorithymsolver
     def search
       index = -1
 
-
       @array.length.times do
         index += 1
         if @array[index] == @number
