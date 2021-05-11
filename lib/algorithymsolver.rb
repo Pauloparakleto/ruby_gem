@@ -69,7 +69,7 @@ module Algorithymsolver
       end
     end
     def modify_zero
-      return @negative_array.sum + @positive_array.sum
+      @negative_array.sum + @positive_array.sum
     end
   end
 
