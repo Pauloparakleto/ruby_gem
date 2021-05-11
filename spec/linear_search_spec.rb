@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Algorithymsolver::LinearSearch do
   it 'should find number index' do
     list = [10, 20, 80, 30, 60, 50, 110, 100, 130, 170]
