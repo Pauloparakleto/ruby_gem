@@ -73,5 +73,4 @@ module Algorithymsolver
       @negative_array.sum + @positive_array.sum
     end
   end
-
 end
