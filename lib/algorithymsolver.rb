@@ -68,6 +68,7 @@ module Algorithymsolver
         end
       end
     end
+
     def modify_zero
       @negative_array.sum + @positive_array.sum
     end
