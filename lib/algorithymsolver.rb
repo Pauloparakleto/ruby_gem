@@ -36,10 +36,10 @@ module Algorithymsolver
     def maximize
       @score = 0
       sorted_array = @array.sort
-      @negative_array = sorted_array.select { |number| number.negative? }
-      @positive_array = sorted_array.select { |number| number.positive? }
+      @negative_array = sorted_array.select(&:negative?)
+      @positive_array = sorted_array.select(&:positive?)
       modify_negatives
-      @zero_array = sorted_array.select { |number| number.zero? }
+      @zero_array = sorted_array.select(&:zero?)
       modify_zero unless @zero_array.empty?
 
       modify_positives
