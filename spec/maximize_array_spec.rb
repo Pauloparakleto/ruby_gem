@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Algorithymsolver::MaximizeArray do
   it "should sum 10" do
     array = [-2, 0, 5, -1, 2]
