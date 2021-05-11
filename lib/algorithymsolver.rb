@@ -13,57 +13,58 @@ module Algorithymsolver
 
     def search
       index = -1
-
-
       @array.length.times do
         index += 1
-        if @array[index] == @number
-          return index
-        end
+        return index if @array[index] == @number
       end
       -1
     end
   end
 
   class MaximizeArray
-    def initialize(array, k)
+    def initialize(array, modifier)
       @array = array
-      @k = k
+      @modifier = modifier
     end
 
     def maximize
       @score = 0
       sorted_array = @array.sort
       @negative_array = sorted_array.select { |number| number.negative? }
-      @positive_array = sorted_array.select { |number| number > 0 }
+      @positive_array = sorted_array.select { |number| number.positive? }
+      modify_negatives
+      @zero_array = sorted_array.select { |number| number.zero? }
+      modify_zero unless @zero_array.empty?
 
-      @negative_array.map! do |number|
-        number = number * -1
-        @score += 1
-        if @score == @k
-          return @negative_array.sum + @positive_array.sum
-        end
-        number
-      end
-
-      @zero_array = sorted_array.select { |number| number == 0 }
-
-      @zero_array.map! do
-        return @negative_array.sum + @positive_array.sum
-      end
-      @positive_array.map! do |number|
-        if @k.even?
-          number
-        else
-          if @score < @k
-            @score = @k
-            -number
-          else
-            number
-          end
-        end
-      end
+      modify_positives
       @positive_array.sum + @negative_array.sum
     end
+
+    def modify_negatives
+      @negative_array.map! do |number|
+        number *= -1
+        @score += 1
+        return @negative_array.sum + @positive_array.sum if @score == @modifier
+
+        number
+      end
+    end
+
+    def modify_positives
+      @positive_array.map! do |number|
+        if @modifier.even?
+          number
+        elsif @score < @modifier
+          @score = @modifier
+          -number
+        else
+          number
+        end
+      end
+    end
+    def modify_zero
+      return @negative_array.sum + @positive_array.sum
+    end
   end
+
 end
