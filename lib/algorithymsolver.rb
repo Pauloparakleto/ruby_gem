@@ -5,6 +5,9 @@ require_relative "algorithymsolver/version"
 module Algorithymsolver
   class Error < StandardError; end
 
+  # Linear search
+  # Performs a search starting at the first index, evaluate to second and so on
+  # until find the number returning it or -1 as not found.
   class LinearSearch
     def initialize(array, number)
       @array = array
@@ -21,6 +24,9 @@ module Algorithymsolver
     end
   end
 
+  # Maximize array
+  # returns the maximus sum of an array after a such times modifier interact
+  # over the numbers changing they signals.
   class MaximizeArray
     def initialize(array, modifier)
       @array = array
