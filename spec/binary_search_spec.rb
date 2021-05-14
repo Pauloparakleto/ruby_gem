@@ -18,18 +18,6 @@ RSpec.describe Algorithymsolver::BinarySearch do
       expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(1)
     end
 
-    it 'should be 2' do
-      number = 8
-
-      expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(2)
-    end
-
-    it 'should be 2' do
-      number = 23
-
-      expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(5)
-    end
-
     it 'should be 9' do
       number = 56
 

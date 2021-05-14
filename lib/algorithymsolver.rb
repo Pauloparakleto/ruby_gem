@@ -105,6 +105,6 @@ module Algorithymsolver
 
   # Binary search
   class BinarySearch
-    def initialize;end
+    def initialize; end
   end
 end
