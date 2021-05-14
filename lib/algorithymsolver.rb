@@ -102,4 +102,9 @@ module Algorithymsolver
       @negative_array.sum + @positive_array.sum
     end
   end
+
+  # Binary search
+  class BinarySearch
+    def initialize; end
+  end
 end
