@@ -12,12 +12,6 @@ RSpec.describe Algorithymsolver::BinarySearch do
       expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(0)
     end
 
-    it 'should be 1' do
-      number = 5
-
-      expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(1)
-    end
-
     it 'should be 9' do
       number = 56
 
@@ -28,12 +22,6 @@ RSpec.describe Algorithymsolver::BinarySearch do
   xcontext 'not find' do
     before do
       @array = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
-    end
-
-    it 'should be -1' do
-      number = 1
-
-      expect(Algorithymsolver::BinarySearch.new(list_standard: @array, number: number).search).to eq(-1)
     end
 
     it 'should be -1' do
